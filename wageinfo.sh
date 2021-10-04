@@ -11,4 +11,7 @@ echo "Highest Paid Earner: "$highest""
 lowest=$(cat "$1" | cut -d , -f 1,2,4 | tr "," " " | sort -k3rn | tail -n 2 | head -n 1)
 echo "Lowest Paid Earner: "$lowest""
 
+#This section returns the number of females in the Top 10 Earners
+num_female=$(cat "$1" | cut -d , -f 1,4 | tr "," " " | sort -k2nr | head -n 10 | grep "female" | wc -l)
+echo "Number of Females in the Top 10 Earners: "$num_female""
 
