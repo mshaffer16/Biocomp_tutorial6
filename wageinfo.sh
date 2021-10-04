@@ -5,3 +5,7 @@ cat wages.csv | tail -n 3294 | cut -d , -f 1,2 | tr "," " " | sort -k1,1 -k2,2n 
 
 #This section returns the gender, years experience, and wage for the highest earner
 cat "$1" | cut -d , -f 1,2,4 | tr "," " " | sort -k3rn | head -n 1 
+
+#This section returns the gender, years experience, and wage for the lowest earner
+cat "$1" | cut -d , -f 1,2,4 | tr "," " " | sort -k3rn | tail -n 2 | head -n 1
+
